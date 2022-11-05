@@ -1,11 +1,13 @@
-import './cartegories.style.scss'
-import Directory from './components/directory/directory.component';
+import {Route, Routes} from 'react-router-dom'
 
-const App = () => {
-  
-  
+import './cartegories.style.scss'
+import Home from './routes/home/home.component';
+
+const App = () => { 
   return (
-    <Directory />
+    <Routes>
+      <Route path='/' element={<Home />} />      
+    </Routes>
   );
 }
 
