@@ -24,9 +24,11 @@ provider.setCustomParameters({
   prompt: "select_account",
 });
 
+// Initializing authentication
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
+//Initializing database
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (
@@ -47,6 +49,7 @@ export const createUserDocumentFromAuth = async (
         displayName,
         email,
         createdAt,
+        ...additionalInformaiton,
       });
     } catch (error) {
       console.log("error creating the user", error.message);
